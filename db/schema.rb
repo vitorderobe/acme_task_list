@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326192021) do
+ActiveRecord::Schema.define(version: 20170326193228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20170326192021) do
     t.datetime "updated_at",                 null: false
     t.index ["user_id", "created_at"], name: "index_lists_on_user_id_and_created_at", using: :btree
     t.index ["user_id"], name: "index_lists_on_user_id", using: :btree
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.text     "description", default: "",    null: false
+    t.boolean  "done",        default: false
+    t.integer  "list_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["list_id", "created_at"], name: "index_tasks_on_list_id_and_created_at", using: :btree
+    t.index ["list_id"], name: "index_tasks_on_list_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +55,5 @@ ActiveRecord::Schema.define(version: 20170326192021) do
   end
 
   add_foreign_key "lists", "users"
+  add_foreign_key "tasks", "lists"
 end
