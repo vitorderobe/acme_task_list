@@ -6,25 +6,34 @@
     <div class="panel-body">
 
       <div class="row">
-        <div class="col-lg-7">
-          <input type="text" class="form-control" placeholder="List title">
+        <div id="list-title-div" class="col-lg-7">
+          <input type="text" id="list-title" class="form-control" placeholder="List title">
         </div>
 
         <div class="col-lg-3">
           <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-primary active">
-              <input type="radio" name="options" id="public-option" autocomplete="off" checked> Public
+            <label id="public-option" class="btn btn-primary active">
+              <input type="radio" name="options" autocomplete="off"> Public
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" name="options" id="private-option" autocomplete="off"> Private
+            <label id="private-option" class="btn btn-primary">
+              <input type="radio" name="options" autocomplete="off"> Private
             </label>
           </div>
         </div>
         <div class="col-lg-2">
-          <button type="button" class="btn btn-success">Create</button>
-          <button type="button" disabled="true" class="btn btn-danger">X</button>
+          <div id="create-list-div">
+            <button type="button" id="create-list" class="btn btn-success">Create</button>
+          </div>
         </div>
       </div>
+
+      <br><br>
+
+      <div id="list-title" ></div>
+
+      <div id="new-task" ></div>
+
+      <div id="new-task-form" ></div>
 
     </div>
   </div>
