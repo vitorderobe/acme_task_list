@@ -1,9 +1,31 @@
-<% if user_signed_in? %>
+<%= render 'home/header' %>
+<%= render 'home/sidebar' %>
 
-<h3>you have succesfully signed in</h3>
+<div id="main-list" class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
 
-<% else %>
+      <div class="row">
+        <div class="col-lg-7">
+          <input type="text" class="form-control" placeholder="List title">
+        </div>
 
-<h1> welcom to rails community</h1>
+        <div class="col-lg-3">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active">
+              <input type="radio" name="options" id="public-option" autocomplete="off" checked> Public
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="options" id="private-option" autocomplete="off"> Private
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <button type="button" class="btn btn-success">Create</button>
+          <button type="button" disabled="true" class="btn btn-danger">X</button>
+        </div>
+      </div>
 
-<% end %>
+    </div>
+  </div>
+</div>
