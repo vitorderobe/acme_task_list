@@ -1,0 +1,15 @@
+<div class="row">
+  <div><%= hidden_field_tag :current_list_id, @current_list_id %></div>
+  <div id="task-div" class="col-lg-10">
+    <!-- <input type="text" id="list-title" class="form-control" placeholder="List title"> -->
+    <textarea id="task-area" class="form-control" placeholder="Task description"></textarea>
+  </div>
+
+  <div class="col-lg-2">
+    <div id="create-task-div">
+      <button type="button" id="create-task" class="btn btn-success">Add Task</button>
+    </div>
+  </div>
+</div>
+
+<hr />
