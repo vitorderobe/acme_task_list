@@ -1,1 +1,2 @@
-$("#user-lists").append("<li><a href='#' data-scroll><span class='fa fa-anchor solo'><%= @list.title %></span></a></li>");
+$("#user-lists").append("<li><a href=lists/show?id=<%= @list.id %> data-scroll>" +
+  "<span class='fa fa-anchor solo'><%= @list.title %></span></a>");
