@@ -31,7 +31,9 @@ jQuery ->
         }
       }
       success: (data, textStatus, jqXHR) ->
-        $("#new-task-form").html("<h2>" + title + "</h2>" + jqXHR.responseText)
+        $("#list-title-label").html("<h2>" + title + "</h2>")
+
+        $("#new-task-form").html(jqXHR.responseText)
 
         $("#create-list-div").html('<button type="button" id="edit-list" class="btn btn-success">Update</button>
           <button type="button" id="delete-list" class="btn btn-danger">X</button>')
