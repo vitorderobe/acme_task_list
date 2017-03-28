@@ -19,9 +19,7 @@
 
       <% @lists.each do |list|%>
         <li>
-          <a href="#" data-scroll>
-            <span class="fa fa-anchor solo"><%= list.title %></span>
-          </a>
+          <%= link_to list.title, lists_show_path(:id => list.id), remote: true %>
         </li>
       <% end %>
     </ul>
