@@ -1,0 +1,9 @@
+a = "user-lists" + <%= @lists.first.user_id.to_s %>
+$("#" + a).remove()
+$("#" + <%= @lists.first.user_id.to_s %>).html("<div id=" + a + "></div>")
+
+<% @lists.each do |list| %>
+  $("#" + a).append("<a data-remote='true' href=lists/show?id=<%= list.id %> data-scroll><span class='fa fa-anchor solo'><%= list.title %></span></a>")
+<% end %>
+
+console.log(a)

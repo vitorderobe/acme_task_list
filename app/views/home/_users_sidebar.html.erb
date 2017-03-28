@@ -1,0 +1,36 @@
+<div id="sidebar-wrapper">
+  <nav id="spy">
+    <ul class="sidebar-nav nav">
+      <li class="sidebar-brand">
+      </li>
+      <li class="sidebar-brand">
+        <a href="#"><span class="fa fa-home solo">User lists</span></a>
+      </li>
+
+      <li>
+        <a href="#demo4" data-toggle="collapse">
+          <span class="fa fa-anchor solo">User 1</span>
+        </a>
+        <div class="collapse" id="demo4">
+          <a href="" class="list-group-item">list 1</a>
+          <a href="" class="list-group-item">list 2</a>
+          <a href="" class="list-group-item">list 3</a>
+        </div>
+      </li>
+
+      <% @users.each do |user|%>
+        <li >
+          <!-- <a href="#sublist" data-toggle="collapse">
+            <span class="fa fa-anchor solo"><%= user.name %></span>
+          </a> -->
+          <%= link_to user.name, lists_index_path(user_id: user.id), remote: true, type: "hidden", "data-target" => "##{user.id}", "data-toggle" => "collapse"%>
+
+          <div class="collapse" id="<%= user.id %>">
+            <div id="<%= "user-lists" + user.id.to_s %>"></div>
+          </div>
+        </li>
+      <% end %>
+
+    </ul>
+  </nav>
+</div>

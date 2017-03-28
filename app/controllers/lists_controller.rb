@@ -1,5 +1,11 @@
 class ListsController < ApplicationController
 
+  def index
+    user   = User.find(params[:user_id])
+    @lists = user.lists
+    respond_to :js
+  end
+
   def show
     @list  = List.find(params[:id])
     @tasks = @list.tasks
