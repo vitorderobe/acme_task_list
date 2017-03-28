@@ -1,12 +1,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "ACME Task List", '#', id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Users",     '#' %></li>
+      <ul id="navigation-menu" class="nav navbar-nav navbar-left">
+        <li><%= link_to "My Lists",  root_path %></li>
         <li><%= link_to "Favorites", '#' %></li>
-        <li><%= link_to "Settings",  '#' %></li>
+        <li><%= link_to "Users",     home_users_path %></li>
       </ul>
     </nav>
+    <%= link_to "ACME Task List", '#', id: "logo" %>
   </div>
 </header>

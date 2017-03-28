@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :lists, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_lists, through: :favorites, source: :list
+  scope :all_except, -> (user) { where.not(id: user) }
 end
