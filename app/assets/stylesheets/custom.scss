@@ -140,6 +140,10 @@ p {
   background: none;
 }
 
+.list_private {
+  color: gray;
+}
+
 /* main list */
 
 #main-list {
@@ -153,5 +157,22 @@ p {
 }
 
 #task-div {
-  padding-left: 30px; 
+  padding-left: 30px;
+}
+
+#list-tasks {
+  list-style-type: none;
+}
+
+/* tasks */
+
+.task-style {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #000;
+  max-width: 800px;
+}
+
+.break-word {
+  word-wrap: break-word;
 }

@@ -1,7 +1,8 @@
 class ListsController < ApplicationController
 
   def show
-    @list = List.find(params[:id])
+    @list  = List.find(params[:id])
+    @tasks = @list.tasks
     respond_to :js
   end
 

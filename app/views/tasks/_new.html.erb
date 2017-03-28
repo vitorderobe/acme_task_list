@@ -1,13 +1,12 @@
 <div id="task-div" class="row">
-  <div id="description-div" class="col-lg-10">
-    <textarea id="task-area" class="form-control" placeholder="Task description"></textarea>
-  </div>
-
-  <div class="col-lg-2">
-    <div id="create-task-div">
-      <button type="button" id="create-task" class="btn btn-success">Add Task</button>
+  <%= simple_form_for Task.new, url: tasks_create_path(list_id: @list.id), remote: true do |f| %>
+    <div id="description-div" class="col-lg-10">
+      <%= f.input :description, label: false, placeholder: "Task description...", as: :text %>
     </div>
-  </div>
+    <div class="col-lg-2">
+      <%= f.button :submit, "Add Task", id: "task-submit", class: 'btn btn-success' %>
+    </div>
+  <% end %>
 </div>
 
 <hr />
