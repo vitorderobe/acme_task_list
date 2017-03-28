@@ -3,7 +3,7 @@ $("#" + a).remove()
 $("#" + <%= @lists.first.user_id.to_s %>).html("<div id=" + a + "></div>")
 
 <% @lists.each do |list| %>
-  $("#" + a).append("<a data-remote='true' href=lists/show?id=<%= list.id %> data-scroll><span class='fa fa-anchor solo'><%= list.title %></span></a>")
+  $("#" + a).append("<%= escape_javascript("#{link_to list.title, lists_show_path(id: list.id), remote: true}").html_safe %>");
 <% end %>
 
 console.log(a)
