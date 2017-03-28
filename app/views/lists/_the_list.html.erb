@@ -1,6 +1,17 @@
 <div id="list-show" class="panel panel-title panel-default">
   <h2><%= @list.title %></h2>
-  
-  <%= render 'tasks/new' %>
-  
+
+  <ul id="list-tasks">
+    <%if @tasks%>
+      <% @tasks.each do |task|%>
+        <li>
+          <% @task = task %>
+          <%= render 'tasks/the_task', locals: {:@task => @task} %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <%= render 'tasks/new', locals: {:@list => @list} %>
+
 </div>

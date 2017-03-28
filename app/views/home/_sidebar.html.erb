@@ -6,7 +6,7 @@
       <li class="sidebar-brand">
         <a href="#"><span class="fa fa-home solo">New List</span></a>
       </li>
-      
+
       <div id="list-container" class="container">
         <%= simple_form_for List.new, url: lists_create_path, remote: true do |f| %>
           <%= f.input :title, label: false, placeholder: "Title" %>

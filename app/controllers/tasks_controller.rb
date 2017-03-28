@@ -4,10 +4,9 @@ class TasksController < ApplicationController
   end
 
   def create
-  	list_id = tasks_params[:list_id]
-    @task = List.find(list_id).tasks.build(tasks_params.except(:list_id))
+    @task = List.find(params[:list_id]).tasks.build(tasks_params)
     if @task.save
-      render partial: 'tasks/new'
+      respond_to :js
     else
       # flash[:danger] = "fail"
       render layout: false
@@ -17,6 +16,6 @@ class TasksController < ApplicationController
   private
 
   def tasks_params
-    params.require(:task).permit(:description, :list_id)
+    params.require(:task).permit(:description)
   end
 end
