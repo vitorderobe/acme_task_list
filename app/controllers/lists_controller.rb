@@ -1,5 +1,10 @@
 class ListsController < ApplicationController
 
+  def show
+    @list = List.find(params[:id])
+    respond_to :js
+  end
+
   def create
     @list = current_user.lists.build(lists_params)
     if @list.save
@@ -13,7 +18,7 @@ class ListsController < ApplicationController
   private
 
   def lists_params
-    params.require(:list).permit(:title, :private)
+    params.require(:list).permit(:title, :private, :id)
   end
 
 end
