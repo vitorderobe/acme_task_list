@@ -2,12 +2,11 @@ class ListsController < ApplicationController
 
   def create
     @list = current_user.lists.build(lists_params)
-    if @current_list_id = @list.save
-      @current_list_id = current_user.lists.last.id
-      render partial: 'tasks/new'
+    if @list.save
+      respond_to :js
     else
       # flash[:danger] = "fail"
-      render layout: false
+      render "home/index"
     end
   end
 
