@@ -1,0 +1,17 @@
+<div id="sidebar-wrapper">
+  <nav id="spy">
+    <ul class="sidebar-nav nav">
+      <li class="sidebar-brand">
+      </li>
+      <li class="sidebar-brand">
+        <a href="#"><span class="fa fa-home solo">Favorites</span></a>
+      </li>
+
+      <% @favorites_list.each do |list|%>
+        <li>
+          <%= link_to list.title, lists_show_path(:id => list.id), remote: true %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</div>
