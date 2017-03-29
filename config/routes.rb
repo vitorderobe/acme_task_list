@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   get  'lists/index'  => 'lists#index'
   get  'lists/show'   => 'lists#show'
   post 'lists/create' => 'lists#create'
+
   post 'tasks/create' => 'tasks#create'
+
+  post   'favorites/create' => 'favorites#create'
+  delete 'favorites/destroy' => 'favorites#destroy'
 end

@@ -1,5 +1,21 @@
+<% actual_user = current_user.id == @list.user_id ? true: false %>
+
 <div id="list-show" class="panel panel-title panel-default">
-  <h2><%= @list.title %></h2>
+  <div class="row">
+    <div class="col-lg-10">
+      <h2><%= @list.title %></h2>
+    </div>
+
+    <% if not actual_user %>
+      <div id="favorites-form" class="col-lg-2">
+        <% if current_user.favorite?(@list) %>
+          <%= render 'disfavor_list' %>
+        <% else %>
+          <%= render 'favorite_list' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
   <ul id="list-tasks">
     <%if @tasks%>
@@ -12,7 +28,7 @@
     <% end %>
   </ul>
 
-  <% if current_user.id == @list.user_id %>
+  <% if actual_user %>
     <%= render 'tasks/new', locals: {:@list => @list} %>
   <% end %>
 
