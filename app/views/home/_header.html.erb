@@ -6,6 +6,9 @@
         <li><%= link_to "Favorites", home_favorites_path %></li>
         <li><%= link_to "Users",     home_users_path %></li>
       </ul>
+      <ul id="navigation-menu" class="nav navbar-nav navbar-right">
+        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+      </ul>
     </nav>
     <%= link_to "ACME Task List", '#', id: "logo" %>
   </div>
