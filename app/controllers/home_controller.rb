@@ -15,5 +15,6 @@ class HomeController < ApplicationController
   end
 
   def favorites
+    @favorites_list = current_user.favorite_lists
   end
 end
