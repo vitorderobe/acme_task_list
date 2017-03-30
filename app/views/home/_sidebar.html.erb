@@ -11,7 +11,7 @@
         <%= simple_form_for List.new, url: lists_create_path, remote: true do |f| %>
           <%= f.input :title, label: false, placeholder: "Title" %>
           <%= f.input :private, as: :boolean %>
-          <%= f.button :submit, "Create" %>
+          <%= f.button :submit, "Create", id: "new-list-button" %>
         <% end %>
       </div>
 
